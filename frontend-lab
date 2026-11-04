@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Login Portal</title>
+    <style>
+        body {
+            background: blue;
+            color: black;
+            margin: 100px;
+        }
+
+        nav {
+            color: red;
+            background: black;
+            padding: 10px;
+        }
+
+        .form {
+            color: green;
+            background: white;
+            border: 2px solid black;
+            margin: 100px;
+            padding: 20px;
+            display: flex;
+            text-align: center;
+        }
+
+        header {
+            font-family: sans-serif;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <header>College login system</header>
+
+    <main>
+        <div class="form">
+
+            <div class="userportal">
+                <h3>User Portal</h3>
+                <label>username</label>
+                <input id="username" type="text">
+                <label>password</label>
+                <input id="password" type="password">
+                <button onclick="login()">LOGIN</button>
+            </div>
+
+            <div class="adminportal">
+                <h3>AdminPortal</h3>
+                <input id="admin" type="text">
+                <input id="passw" type="password">
+                <button onclick="login()">LOGIN</button>
+            </div>
+
+        </div>
+
+        <script>
+            function user() {
+                console.log("hello user");
+                console.log("welcome to javascript");
+            }
+
+            function admin() {
+                console.log("you granted admin access");
+                console.log("welcome admin");
+            }
+
+            localStorage.setItem("username", "student");
+            localStorage.setItem("password", "1234");
+            localStorage.setItem("admin", "admin");
+            localStorage.setItem("adp", "4321");
+
+            function login() {
+                let username = document.getElementById("username").value;
+                let password = document.getElementById("password").value;
+                let adminName = document.getElementById("admin").value;
+                let adp = document.getElementById("passw").value;
+
+                let a = localStorage.getItem("username");
+                let b = localStorage.getItem("password");
+                let c = localStorage.getItem("admin");
+                let d = localStorage.getItem("adp");
+
+                if (username == a && password == b) {
+                    user();
+                } else if (adminName == c && adp == d) {
+                    admin();
+                } else {
+                    console.log("enter correct details");
+                }
+            }
+        </script>
+    </main>
+</body>
+</html>
